@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movieflix/constants/constants.dart';
 
 class DetailScreen extends StatelessWidget {
   final String url, title, description;
@@ -12,7 +11,8 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      //NetworkImage('https://image.tmdb.org/t/p/w342/$url')
+      appBar: AppBar(
           //backgroundColor: kPrimaryColor,
         ),
       body: Container(

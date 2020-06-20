@@ -1,4 +1,4 @@
-#Fri Jun 19 12:28:40 IST 2020
+#Sat Jun 20 13:30:33 IST 2020
 base.0=C\:\\Users\\Aksha\\OneDrive\\Desktop\\flutter_journey\\movie_flix\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

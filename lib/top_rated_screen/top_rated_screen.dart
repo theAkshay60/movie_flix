@@ -4,7 +4,8 @@ import 'package:movieflix/Services/services.dart';
 import 'package:movieflix/custom_search/custom_search.dart';
 import 'package:movieflix/detail_screen/detail_screen.dart';
 import 'package:movieflix/movie_card/movie_card_view.dart';
-import 'package:movieflix/movie_view_model/movie_view_model.dart';
+import 'package:movieflix/notifiers/notifiers.dart';
+import 'package:provider/provider.dart';
 
 class TopRateScreen extends StatefulWidget {
   @override
@@ -14,9 +15,7 @@ class TopRateScreen extends StatefulWidget {
 class _TopRateScreenState extends State<TopRateScreen> {
   static const topRatedURL =
       'https://api.themoviedb.org/3/movie/top_rated?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed';
-  String searchValue;
-  bool isLoading = true;
-  List<MovieViewModel> _movieList;
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -25,16 +24,18 @@ class _TopRateScreenState extends State<TopRateScreen> {
   }
 
   _apiCalling() {
+    var _movies = Provider.of<ListManagement>(context, listen: false);
     Service.getTopRatedMovies(topRatedURL).then((movies) {
-      _movieList = movies;
+      _movies.setMovies(movies);
       setState(() {
-        isLoading = false;
+        _isLoading = false;
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    var _movies = Provider.of<ListManagement>(context, listen: true);
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
@@ -43,42 +44,45 @@ class _TopRateScreenState extends State<TopRateScreen> {
             onPressed: () {
               showSearch(
                 context: context,
-                delegate:
-                _movieList == null ? null : CustomSearch(_movieList),
+                delegate: _movies.getMovies == null ? null : CustomSearch(),
               );
             },
           )
         ],
       ),
       body: ModalProgressHUD(
-        inAsyncCall: isLoading,
+        inAsyncCall: _isLoading,
         child: ListView.builder(
-            itemCount: _movieList == null ? 0 : _movieList.length,
-            itemBuilder: (context, index) {
-              return Dismissible(
-                key: Key(_movieList[index].id.toString()),
-                onDismissed: (direction){
-                  setState(() {
-                    _movieList.removeAt(index);
-                  });
+          itemCount: _movies.getMovies == null ? 0 : _movies.getMovies.length,
+          itemBuilder: (context, index) {
+            return Dismissible(
+              key: Key(_movies.getMovies[index].id.toString()),
+              onDismissed: (direction) {
+                _movies.getMovies.removeAt(index);
+              },
+              child: MovieCard(
+                title: _movies.getMovies[index].title,
+                description: _movies.getMovies[index].overview,
+                imageURL: _movies.getMovies[index].posterPath,
+                id: _movies.getMovies[index].id,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailScreen(
+                        id: _movies.getMovies[index].id,
+                        url: _movies.getMovies[index].posterPath,
+                        title: _movies.getMovies[index].title,
+                        description: _movies.getMovies[index].overview,
+                        releaseDate: _movies.getMovies[index].releaseDate,
+                      ),
+                    ),
+                  );
                 },
-                child: MovieCard(
-                  title: _movieList[index].title,
-                  description: _movieList[index].overview,
-                  imageURL: _movieList[index].posterPath,
-                  id: _movieList[index].id,
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(
-                      id: _movieList[index].id,
-                      url: _movieList[index].posterPath,
-                      title: _movieList[index].title,
-                      description: _movieList[index].overview,
-                      releaseDate: _movieList[index].releaseDate,
-                    )));
-                  },
-                ),
-              );
-            }),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

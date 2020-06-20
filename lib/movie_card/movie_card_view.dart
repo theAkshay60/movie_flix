@@ -26,12 +26,12 @@ class MovieCard extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(5))),
           child: Row(
             children: <Widget>[
-              Hero(
-                  tag: id,
-                  child: Image.network(
-                    'https://image.tmdb.org/t/p/w342/$imageURL',
-                    height: 100,
-                  )),
+              FadeInImage.assetNetwork(
+                placeholder: 'assets/placeholder.png',
+                image: 'https://image.tmdb.org/t/p/w342/$imageURL',
+                height: 100,
+                width: 60,
+              ),
               SizedBox(
                 width: 10,
               ),

@@ -1,8 +1,6 @@
-
 import 'package:movieflix/movie_model/now_playing.dart';
 
 class MovieViewModel {
-
   MovieViewModel({
     this.popularity,
     this.voteCount,

@@ -3,27 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:movieflix/constants/constants.dart';
 import 'package:movieflix/detail_screen/detail_screen.dart';
 import 'package:movieflix/movie_card/movie_card_view.dart';
-import 'package:movieflix/movie_view_model/movie_view_model.dart';
+import 'package:movieflix/notifiers/notifiers.dart';
+import 'package:provider/provider.dart';
 
-class CustomSearch extends SearchDelegate{
-
-  final List<MovieViewModel> moviesList;
-
-  CustomSearch(this.moviesList);
-
+class CustomSearch extends SearchDelegate {
   @override
   ThemeData appBarTheme(BuildContext context) {
     var brightness = DynamicTheme.of(context).brightness;
     // TODO: implement appBarTheme
     return ThemeData(
-      primaryColor: brightness == Brightness.dark
-          ? Colors.blueGrey[900]
-          : kPrimaryColor,
+      primaryColor:
+      brightness == Brightness.dark ? Colors.blueGrey[900] : kPrimaryColor,
       //brightness: DynamicTheme.of(context).brightness,
       textTheme: TextTheme(
-          title: TextStyle(color: brightness == Brightness.dark
-              ? Colors.white
-              : Colors.black54),
+        title: TextStyle(
+            color:
+            brightness == Brightness.dark ? Colors.white : Colors.black54),
       ),
     );
   }
@@ -60,35 +55,53 @@ class CustomSearch extends SearchDelegate{
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    var _movies = Provider.of<ListManagement>(context, listen: true);
 
     final _suggestionList = query.isEmpty
-        ? moviesList
-        : moviesList
+        ? _movies.getMovies
+        : _movies.getMovies
         .where((element) =>
-        element.title.toString().toLowerCase().startsWith(query))
+        element.title.toString().toLowerCase().contains(query))
         .toList();
 
     // TODO: implement buildSuggestions
-    return ListView.builder(
-      itemCount: _suggestionList == null ? 0: _suggestionList.length,
-        itemBuilder: (context, index){
-      return MovieCard(
-        title: _suggestionList[index].title,
-        imageURL: _suggestionList[index].posterPath,
-        description: _suggestionList[index].overview,
-        id: _suggestionList[index].id,
-        onPressed: (){
-
-          Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(
-            id: _suggestionList[index].id,
-            url: _suggestionList[index].posterPath,
-            title: _suggestionList[index].title,
-            description: _suggestionList[index].overview,
-            releaseDate: _suggestionList[index].releaseDate,
-          )));
-        },
-      );
-    });
+    return StatefulBuilder(
+      builder: (context, setState) {
+        return ListView.builder(
+          itemCount: _suggestionList == null ? 0 : _suggestionList.length,
+          itemBuilder: (context, index) {
+            return Dismissible(
+              key: Key(_suggestionList[index].id.toString()),
+              onDismissed: (direction) {
+                setState(() {
+                  _suggestionList.removeAt(index);
+                });
+              },
+              child: MovieCard(
+                title: _suggestionList[index].title,
+                imageURL: _suggestionList[index].posterPath,
+                description: _suggestionList[index].overview,
+                id: _suggestionList[index].id,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          DetailScreen(
+                            id: _suggestionList[index].id,
+                            url: _suggestionList[index].posterPath,
+                            title: _suggestionList[index].title,
+                            description: _suggestionList[index].overview,
+                            releaseDate: _suggestionList[index].releaseDate,
+                          ),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
+        );
+      },
+    );
   }
-
 }

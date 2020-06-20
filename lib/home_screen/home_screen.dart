@@ -5,14 +5,18 @@ import 'package:movieflix/now_playing_screen/now_playing_screen.dart';
 import 'package:movieflix/top_rated_screen/top_rated_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  bool darkThemEnabled;
+
+  HomeScreen({this.darkThemEnabled});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   final tabs = [NowPlayingScreen(), TopRateScreen()];
-
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var brightness = DynamicTheme.of(context).brightness;
