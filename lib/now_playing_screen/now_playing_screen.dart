@@ -78,6 +78,7 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
                 imageURL: _movies.getMovies[index].posterPath,
                 description: _movies.getMovies[index].overview,
                 id: _movies.getMovies[index].id,
+                isDeleteHidden: false,
                 onPressed: () {
                   Navigator.push(
                     context,

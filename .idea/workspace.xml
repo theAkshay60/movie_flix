@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb3f8f57-8583-41c4-9ecc-0c0b8177e008" name="Default Changelist" comment="Search logic change&#10;Swipe to delete on search&#10;Smooth Image Loading">
-      <change afterPath="$PROJECT_DIR$/assets/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/notifiers/notifiers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/debug_android_application.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/debug_android_application.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/37fea1cc08dc2c9daef1256221b058f6/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+    <list default="true" id="bb3f8f57-8583-41c4-9ecc-0c0b8177e008" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/AssetManifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/AssetManifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/app.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/app.apk.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Services/services.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Services/services.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/custom_search/custom_search.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/custom_search/custom_search.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/detail_screen/detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/detail_screen/detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/home_screen/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/home_screen/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/movie_card/movie_card_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/movie_card/movie_card_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/movie_view_model/movie_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/movie_view_model/movie_view_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/notifiers/notifiers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/notifiers/notifiers.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/now_playing_screen/now_playing_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/now_playing_screen/now_playing_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/top_rated_screen/top_rated_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/top_rated_screen/top_rated_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flutter_listview" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -99,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592553352796</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Search logic change&#10;Swipe to delete on search&#10;Smooth Image Loading">
+      <created>1592640573109</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592640573109</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,7 +100,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
+    <MESSAGE value="Search logic change&#10;Swipe to delete on search&#10;Smooth Image Loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search logic change&#10;Swipe to delete on search&#10;Smooth Image Loading" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

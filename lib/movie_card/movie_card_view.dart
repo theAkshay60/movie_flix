@@ -7,9 +7,15 @@ class MovieCard extends StatelessWidget {
   final String title, description, imageURL;
   final int id;
   final Function onPressed;
+  final bool isDeleteHidden;
+  final Function onDeletePress;
 
-  const MovieCard(
-      {this.title, this.description, this.imageURL, this.id, this.onPressed});
+  const MovieCard({this.title,
+    this.description,
+    this.imageURL,
+    this.id,
+    this.onPressed,
+    this.isDeleteHidden, this.onDeletePress});
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +72,11 @@ class MovieCard extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              Visibility(
+                visible: isDeleteHidden,
+                child: IconButton(
+                    icon: Icon(Icons.delete), onPressed: onDeletePress),
               ),
             ],
           )),

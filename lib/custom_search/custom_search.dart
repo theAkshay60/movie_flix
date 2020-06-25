@@ -70,34 +70,33 @@ class CustomSearch extends SearchDelegate {
         return ListView.builder(
           itemCount: _suggestionList == null ? 0 : _suggestionList.length,
           itemBuilder: (context, index) {
-            return Dismissible(
-              key: Key(_suggestionList[index].id.toString()),
-              onDismissed: (direction) {
+            return MovieCard(
+              title: _suggestionList[index].title,
+              imageURL: _suggestionList[index].posterPath,
+              description: _suggestionList[index].overview,
+              id: _suggestionList[index].id,
+              isDeleteHidden: true,
+              onDeletePress: () {
+                print(index);
+                _movies.updateMovies(_suggestionList[index].id);
                 setState(() {
                   _suggestionList.removeAt(index);
                 });
               },
-              child: MovieCard(
-                title: _suggestionList[index].title,
-                imageURL: _suggestionList[index].posterPath,
-                description: _suggestionList[index].overview,
-                id: _suggestionList[index].id,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          DetailScreen(
-                            id: _suggestionList[index].id,
-                            url: _suggestionList[index].posterPath,
-                            title: _suggestionList[index].title,
-                            description: _suggestionList[index].overview,
-                            releaseDate: _suggestionList[index].releaseDate,
-                          ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(
+                      id: _suggestionList[index].id,
+                      url: _suggestionList[index].posterPath,
+                      title: _suggestionList[index].title,
+                      description: _suggestionList[index].overview,
+                      releaseDate: _suggestionList[index].releaseDate,
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             );
           },
         );

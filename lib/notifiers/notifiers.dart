@@ -12,7 +12,7 @@ class ListManagement extends ChangeNotifier {
   }
 
   void updateMovies(int index) {
-    _movies.removeAt(index);
+    _movies.removeWhere((movie) => movie.id == index);
     notifyListeners();
   }
 }
